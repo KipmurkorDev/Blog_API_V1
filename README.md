@@ -61,9 +61,9 @@ To use this API, follow these steps:
 
 1. Clone the repository: `git clone [repository-url]`
 2. Install dependencies: `npm install`
-3. Configure your MongoDB connection in the `config.js` file.
+3. Configure your environment variables.
 4. Start the server: `npm start`
-5. You can now access the API at [http://localhost:3000](http://localhost:3000)
+5. You can now access the API athttp://localhost:3000
 
 ## Authentication
 
