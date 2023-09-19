@@ -5,9 +5,9 @@ const {
 } = require("../../Controllers/userController/userController");
 
 const userRouter = express.Router();
-
+// sign up the users
 userRouter.post("/signup", userSignup);
-
+// login users to get token
 userRouter.post("/login", userLogin);
 
 module.exports = userRouter;
