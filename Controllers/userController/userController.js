@@ -28,10 +28,12 @@ const userSignup = async (req, res) => {
         .status(200)
         .json({ status: "succcess", message: "Successfull Registered" });
     } else {
-      res.json({ message: "Your are  already registered " });
+      res
+        .status(409)
+        .json({ status: "error", message: "User already registered " });
     }
   } catch (error) {
-    return res.status(400).json({ message: error.message });
+    return res.status(500).json({ message: error.message });
   }
 };
 
@@ -41,13 +43,13 @@ const userLogin = async (req, res) => {
     if (!email || !password) {
       return res.status(400).json({
         status: "error",
-        message: "Please enter your email and password to log in.",
+        message:
+          "Please enter your email and password to log in. All fields are required",
       });
     }
     const user = await authorModel.findOne({ email });
     if (user) {
       const confirmpassword = await bcrypt.compare(password, user.password);
-
       if (confirmpassword) {
         const token = jwt.sign(
           { fullName: user.fullName, email: user.email, author: user._id },
@@ -58,17 +60,17 @@ const userLogin = async (req, res) => {
           .status(200)
           .json({ token, status: "succcess", message: "Successfull Login" });
       } else {
-        return res.status(400).json({
+        return res.status(401).json({
           status: "error",
           message:
             "wrong email or password. Please check your credentials and try again.",
         });
       }
     } else {
-      return res.status(400).json({ message: "User not found" });
+      return res.status(404).json({ message: "User not found" });
     }
   } catch (error) {
-    return res.status(400).json({ error: error.message });
+    return res.status(500).json({ error: error.message });
   }
 };
 

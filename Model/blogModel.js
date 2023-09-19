@@ -1,10 +1,10 @@
+const { string } = require("joi");
 const mongoose = require("mongoose");
 
 const blogSchema = new mongoose.Schema({
   title: {
     type: String,
     required: [true, "Please provide a title"],
-    unique: true,
     minlength: [4, "Please provide a title least 4 characters "],
   },
   content: {
@@ -16,6 +16,13 @@ const blogSchema = new mongoose.Schema({
     ref: "Author",
     required: true,
   },
+  viewsCount: { type: Number, default: 0 },
+  coAuthors: [
+    {
+      coAuthorName: { type: String },
+      coAuthorEmail: { type: String },
+    },
+  ],
   likes: [
     {
       type: mongoose.Schema.ObjectId,
