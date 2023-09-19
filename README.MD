@@ -1,4 +1,4 @@
-    <h1>Blogging API</h1>
+    <h1>Blogging API.</h1>
     <p>The Blogging API is a versatile web service that allows you to create, manage, and interact with blogs and comments. It includes user authentication to ensure secure access to specific functionalities. This API is designed using Node.js and Express and relies on MongoDB as the database.</p>
 
     <h2>Endpoints</h2>
