@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blogging API</title>
-</head>
-<body>
     <h1>Blogging API</h1>
     <p>The Blogging API is a versatile web service that allows you to create, manage, and interact with blogs and comments. It includes user authentication to ensure secure access to specific functionalities. This API is designed using Node.js and Express and relies on MongoDB as the database.</p>
 
@@ -140,6 +132,3 @@
 
     <h2>License</h2>
     <p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
-
-</body>
-</html>
