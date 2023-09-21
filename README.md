@@ -63,7 +63,13 @@ To use this API, follow these steps:
 2. Install dependencies: `npm install`
 3. Configure your environment variables.
 4. Start the server: `npm start`
-5. You can now access the API athttp://localhost:3000
+5. You can now access the API at http://localhost:3000
+
+## Deployment to AWS EC2 Instance
+
+We have successfully deployed the Blogging API to an Amazon Web Services (AWS) EC2 instance to make it publicly accessible on the internet. You can access the API using the following public address:
+
+**Public API Address:** [http://13.53.125.231/blogs](http://13.53.125.231/blogs)
 
 ## Authentication
 
